@@ -7,28 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img class="logoAlura" src="img/logoAlura.png" alt="logo alura">
+    <header class="cabecalho">
+        <img class="cabecalho__logoAlura" src="img/logoAlura.png" alt="logo alura">
     </header>
-    <section class="area">
-        <textarea class="text__area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
-        <div class="area__aviso">
-            <img class="exclamassao" src="img/exclamation.png" alt="sinal exclamassao">
-            <p>Apenas letras minúsculas e sem acento.</p>
-        </div>
-        <div class="area__botoes">
-            <button class="area__botoes__botao">Criptografar</button>
-            <button class="area__botoes__botao">Descriptografar</button>
-        </div>
-    </section>
-    <section class="resposta">
-        <textarea class="resposta__area" cols="20" rows="10" readonly></textarea>
-        <img class="resposta__figura" src="img/High quality products 1 1.png" alt="figura lupa diamante">
-        <button>Copiar</button>
-    </section>
-    <footer>
+    <main class="conteudo">
+        <section class="conteudo__area">
+            <textarea id="inserirTexto" class="conteudo__text__area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
+            <div class="conteudo__area__aviso">
+                <img class="exclamassao" src="img/exclamation.png" alt="sinal exclamassao">
+                <p>Apenas letras minúsculas e sem acento.</p>
+            </div>
+            <div class="conteudo__area__botoes">
+                <button onclick="criptografar()" class="area__botoes__botao">Criptografar</button>
+                <button class="area__botoes__botao">Descriptografar</button>
+            </div>
+        </section>
+        <section class="conteudo__resposta">
+            <div id="retornarTexto" class="conteudo__mostra__texto">
+                <textarea id="retornarTexto__texto" class="conteudo__resposta__area" cols="20" rows="10" readonly></textarea>
+                <button  class="conteudo__botao__copiar" >Copiar</button>
+            </div>
+            <div id="conteudo__imagem__texto">
+                <img class="conteudo__resposta__figura" src="img/High quality products 1 1.png" alt="figura lupa diamante">
+                <div class="conteudo__resposta__texto">
+                    <h1>Nenhuma mensagem encontrada</h1>
+                    <p>Digite um texto que voce deseja Criptografar ou Descriptografar</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    <footer class="rodape">
         <p>Site criado por Lucas Menezes</p>
-        <a target="_blank" href="https://github.com/LucasMSS98">github</a>
+        <a class="rodape__link" target="_blank" href="https://github.com/LucasMSS98">github</a>
     </footer>
+    <script>
+        function criptografar(){
+            document.getElementById("conteudo__imagem__texto").style.display = "none"
+            document.getElementById("retornarTexto").style.display = "flex";
+            let x = document.getElementById("inserirTexto").value;
+            document.getElementById("retornarTexto__texto").value = x;
+        }
+    </script>
 </body>
 </html>
