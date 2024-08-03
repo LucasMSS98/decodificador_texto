@@ -115,3 +115,49 @@ body{
 .rodape__link{
     text-decoration: none;
 }
+@media (max-width: 768px){ /*Tablet*/
+    .conteudo{
+        display: flex;
+        flex-direction: column;
+    }
+    .conteudo__area{
+        width: 100%;
+        padding: 78px 0 0 0;
+    }
+    .conteudo__resposta{
+        width: 100%;
+        margin: 0 0 10px 0;
+        height: auto;
+    }
+    .conteudo__resposta__figura{
+        display: none;
+    }
+    .conteudo__resposta__texto{
+        width: auto;
+        height: auto;
+
+    }
+    .conteudo__resposta__texto h1{
+        font-size: 24px;
+    }
+    .conteudo__resposta__texto p{
+        font-size: 16px;
+    }
+    .conteudo__resposta__area{
+        width: 620px;
+        margin: 30px 0 0 0;
+        height: auto;
+    }
+    .conteudo__botao__copiar{
+        margin-bottom: 25px;
+    }
+}
+@media (max-width: 425px){ /*Celular*/
+    .conteudo__area__botoes{
+        flex-direction: column;
+    }
+    .conteudo__resposta__area{
+        width: auto;
+    }
+
+}
