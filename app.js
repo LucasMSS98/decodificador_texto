@@ -1,20 +1,29 @@
-let x = 'gaitober';
-console.log(descriptografando(x));
-
 function criptografar(){
     trocaTela();
     let x = document.getElementById("inserirTexto").value;
     document.getElementById("retornarTexto__texto").value = criptografando(x);
-    document.getElementById("inserirTexto").value = '';
+    limparTexto();
 }
 function descriptografar(){
     trocaTela();
     let x = document.getElementById("inserirTexto").value;
     document.getElementById("retornarTexto__texto").value = descriptografando(x);
+    limparTexto();
+}
+function copiarTexto(){
+    let x = document.getElementById("retornarTexto__texto").value;
+    navigator.clipboard.writeText(x).then(() => {})
+    .catch(err => {
+        console.error("erro ao copia texto: ", err);
+    });
+    document.getElementById("retornarTexto__texto").value = '';
 }
 function trocaTela(){
     document.getElementById("conteudo__imagem__texto").style.display = "none"
     document.getElementById("retornarTexto").style.display = "flex";
+}
+function limparTexto(){
+    document.getElementById("inserirTexto").value = '';
 }
 function criptografando(x){
     let resultado = '';
@@ -42,45 +51,25 @@ function criptografando(x){
 function descriptografando(x){
     let resultado = '';
     for(let i = 0; i < x.length; i++){
-        if(x[i] ===  'e' && x[i+1] === 'n' && x[i+2] === 't' && x[i+3] === 'e' && x[i+4] === 'r'){
+        if(x.slice(i, i + 5) === 'enter'){
             resultado  += 'e';
-            if(i+5 >= x.length){
-                return resultado;
-            }else{
-                i = i+5;
-            }
+            i += 4;
         }
-        if(x[i] ===  'i' && x[i+1] === 'm' && x[i+2] === 'e' && x[i+3] === 's'){
+        else if(x.slice(i, i + 4) === 'imes'){
             resultado  += 'i';
-            if(i+4 >= x.length){
-                return resultado;
-            }else{
-                i = i+4;
-            }
+            i += 3;
         }
-        if(x[i] ===  'a' && x[i+1] === 'i' ){
+        else if(x.slice(i, i + 2) === 'ai'){
             resultado  += 'a';
-            if(i+2 >= x.length){
-                return resultado;
-            }else{
-                i = i+2;
-            }
+            i += 1;
         }
-        if(x[i] ===  'o' && x[i+1] === 'b' && x[i+2] === 'e' && x[i+3] === 'r'){
+        else if(x.slice(i, i + 4) === 'ober'){
             resultado  += 'o';
-            if(i+4 >= x.length){
-                return resultado;
-            }else{
-                i = i+4;
-            }
+            i += 3;
         }
-        if(x[i] ===  'u' && x[i+1] === 'f' && x[i+2] === 'a' && x[i+3] === 't'){
+        else if(x.slice(i, i + 4) === 'ufat'){
             resultado  += 'u';
-            if(i+4 >= x.length){
-                return resultado;
-            }else{
-                i = i+4;
-            }
+            i += 3;
         }
         else{
             resultado  += x[i];
