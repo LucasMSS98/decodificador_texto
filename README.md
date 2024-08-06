@@ -23,3 +23,5 @@ Voce pode <a target="_blank" href="https://github.com/LucasMSS98/decodificador_t
 1. Clone o repositório ou baixe-o.
 2. Abra o arquivo `index.html` em seu navegador.
 3. Insira o texto que deseja criptografar ou descriptografar.
+
+![Decodificador de texto](https://github.com/user-attachments/assets/5d93d5b6-f9be-443c-b86f-3d96923ba740)
