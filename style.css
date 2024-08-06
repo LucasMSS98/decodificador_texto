@@ -15,6 +15,7 @@ body{
 }
 .conteudo{
     display: flex;
+    justify-content: center;
     gap:60px;
 }
 .conteudo__area{
