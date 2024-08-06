@@ -1,14 +1,25 @@
 function criptografar(){
-    trocaTela();
-    let x = document.getElementById("inserirTexto").value;
-    document.getElementById("retornarTexto__texto").value = criptografando(x);
-    limparTexto();
+    let x = document.getElementById("inserirTexto").value.toLowerCase();
+    if(possuiAcento(x) == true){
+        document.getElementById("aviso").style.color = "red";
+    }else{
+        trocaTela();
+        document.getElementById("aviso").style.color = "#0A3871";
+        document.getElementById("retornarTexto__texto").value = criptografando(x);
+        limparTexto();
+    }
 }
 function descriptografar(){
-    trocaTela();
-    let x = document.getElementById("inserirTexto").value;
-    document.getElementById("retornarTexto__texto").value = descriptografando(x);
-    limparTexto();
+    let x = document.getElementById("inserirTexto").value.toLowerCase();
+    if(possuiAcento(x)){
+        document.getElementById("aviso").style.color = "red";
+    }else{
+        trocaTela();
+        document.getElementById("aviso").style.color = "#0A3871";
+        document.getElementById("retornarTexto__texto").value = descriptografando(x);
+        limparTexto();
+    }
+    
 }
 function copiarTexto(){
     let x = document.getElementById("retornarTexto__texto").value;
@@ -19,11 +30,14 @@ function copiarTexto(){
     document.getElementById("retornarTexto__texto").value = '';
 }
 function trocaTela(){
-    document.getElementById("conteudo__imagem__texto").style.display = "none"
+    document.getElementById("conteudo__imagem__texto").style.display = "none";
     document.getElementById("retornarTexto").style.display = "flex";
 }
 function limparTexto(){
     document.getElementById("inserirTexto").value = '';
+}
+function possuiAcento(x){
+    return /[áàâãéèêíïóôõöúçÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇ]/.test(x);
 }
 function criptografando(x){
     let resultado = '';
