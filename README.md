@@ -18,7 +18,7 @@ As chaves de criptografia utilizadas são:
 
 <h2 align='center'>:information_source: Instalação e Uso</h2>
 
-Voce pode <a target="_blank" href="https://github.com/LucasMSS98/decodificador_texto.git">acessar o codigo fonte do projeto</a> ou <a target="_blank" href="https://github.com/LucasMSS98/decodificador_texto/archive/refs/heads/main.zip">baixá-lo aqui.</a>
+<p>Voce pode <a target="_blank" href="https://github.com/LucasMSS98/decodificador_texto.git">acessar o codigo fonte do projeto</a>, <a target="_blank" href="https://github.com/LucasMSS98/decodificador_texto/archive/refs/heads/main.zip">baixá-lo</a>, ou executa-lo <a target="_blank" href="https://decodificador-texto-teal.vercel.app">clicando aqui.</a>.</p>
 
 1. Clone o repositório ou baixe-o.
 2. Abra o arquivo `index.html` em seu navegador.
